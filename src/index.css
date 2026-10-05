@@ -1,0 +1,438 @@
+:root { /* Define variables globales reutilizables en los estilos de la tienda. */
+  --primary: #15803d; /* Guarda el color verde principal de la interfaz. */
+  --primary-hover: #166534; /* Guarda el verde mas oscuro para estados al pasar el cursor. */
+  --bg-main: #f8fafc; /* Guarda el color de fondo general de la pagina. */
+  --surface: #ffffff; /* Guarda el color blanco de tarjetas y paneles. */
+  --text-dark: #0f172a; /* Guarda el color principal de los textos. */
+  --text-muted: #64748b; /* Guarda el color de los textos secundarios. */
+  --border: #e2e8f0; /* Guarda el color reutilizable de los bordes. */
+  --danger: #dc2626; /* Guarda el color para acciones y avisos de peligro. */
+  --warning: #d97706; /* Guarda el color para advertencias. */
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Guarda la sombra reutilizable de tarjetas y paneles. */
+}
+
+* { /* Define los estilos del selector *. */
+  box-sizing: border-box; /* Incluye el borde y el relleno dentro del tamano total del elemento. */
+  margin: 0; /* Define el espacio exterior alrededor del elemento. */
+  padding: 0; /* Define el espacio interior entre el contenido y el borde. */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Selecciona la tipografia del texto. */
+}
+
+body { /* Define los estilos del selector body. */
+  background-color: var(--bg-main); /* Define el color de fondo del elemento. */
+  color: var(--text-dark); /* Define el color del texto o del icono. */
+}
+
+/* Navbar */
+.navbar-fixed { /* Define los estilos del selector .navbar-fixed. */
+  position: fixed; /* Determina como se posiciona el elemento en la pagina. */
+  top: 0; /* Define la distancia desde el borde superior de referencia. */
+  left: 0; /* Define la distancia desde el borde izquierdo de referencia. */
+  right: 0; /* Define la distancia desde el borde derecho de referencia. */
+  height: 64px; /* Define la altura del elemento. */
+  background-color: var(--primary); /* Define el color de fondo del elemento. */
+  color: white; /* Define el color del texto o del icono. */
+  z-index: 100; /* Controla el orden de superposicion respecto a otros elementos. */
+  box-shadow: var(--shadow); /* Anade una sombra para dar profundidad visual. */
+}
+
+.navbar-container { /* Define los estilos del selector .navbar-container. */
+  max-width: 1200px; /* Limita el ancho maximo del elemento. */
+  margin: 0 auto; /* Define el espacio exterior alrededor del elemento. */
+  height: 100%; /* Define la altura del elemento. */
+  display: flex; /* Selecciona el modelo de disposicion de los elementos internos. */
+  justify-content: space-between; /* Distribuye los elementos a lo largo del eje principal. */
+  align-items: center; /* Alinea los elementos en el eje transversal. */
+  padding: 0 1.5rem; /* Define el espacio interior entre el contenido y el borde. */
+}
+
+.navbar-brand { /* Define los estilos del selector .navbar-brand. */
+  display: flex; /* Selecciona el modelo de disposicion de los elementos internos. */
+  align-items: center; /* Alinea los elementos en el eje transversal. */
+  gap: 0.75rem; /* Define el espacio entre los elementos del contenedor. */
+}
+
+.navbar-brand h1 { /* Define los estilos del selector .navbar-brand h1. */
+  font-size: 1.25rem; /* Define el tamano del texto. */
+  font-weight: 700; /* Define el grosor del texto. */
+}
+
+.cart-button { /* Define los estilos del selector .cart-button. */
+  position: relative; /* Determina como se posiciona el elemento en la pagina. */
+  background: none; /* Define el fondo del elemento. */
+  border: none; /* Define el grosor, estilo y color del borde. */
+  color: white; /* Define el color del texto o del icono. */
+  cursor: pointer; /* Define la apariencia del puntero sobre el elemento. */
+  padding: 0.5rem; /* Define el espacio interior entre el contenido y el borde. */
+  border-radius: 50%; /* Redondea las esquinas del elemento. */
+  display: flex; /* Selecciona el modelo de disposicion de los elementos internos. */
+  align-items: center; /* Alinea los elementos en el eje transversal. */
+  justify-content: center; /* Distribuye los elementos a lo largo del eje principal. */
+  transition: background 0.2s; /* Suaviza los cambios entre estados visuales. */
+}
+
+.cart-button:hover { /* Define los estilos del selector .cart-button:hover. */
+  background-color: rgba(255, 255, 255, 0.15); /* Define el color de fondo del elemento. */
+}
+
+.cart-badge { /* Define los estilos del selector .cart-badge. */
+  position: absolute; /* Determina como se posiciona el elemento en la pagina. */
+  top: -2px; /* Define la distancia desde el borde superior de referencia. */
+  right: -2px; /* Define la distancia desde el borde derecho de referencia. */
+  background-color: var(--danger); /* Define el color de fondo del elemento. */
+  color: white; /* Define el color del texto o del icono. */
+  font-size: 0.75rem; /* Define el tamano del texto. */
+  font-weight: bold; /* Define el grosor del texto. */
+  border-radius: 9999px; /* Redondea las esquinas del elemento. */
+  padding: 2px 6px; /* Define el espacio interior entre el contenido y el borde. */
+  min-width: 18px; /* Evita que el elemento sea mas estrecho que este valor. */
+  text-align: center; /* Alinea el texto horizontalmente. */
+}
+
+/* Catálogo */
+.catalog-container { /* Define los estilos del selector .catalog-container. */
+  max-width: 1200px; /* Limita el ancho maximo del elemento. */
+  margin: 80px auto 40px; /* Define el espacio exterior alrededor del elemento. */
+  padding: 0 1.5rem; /* Define el espacio interior entre el contenido y el borde. */
+}
+
+.section-title { /* Define los estilos del selector .section-title. */
+  margin-bottom: 1.5rem; /* Establece el valor de margin-bottom para esta regla. */
+  font-size: 1.5rem; /* Define el tamano del texto. */
+  color: var(--text-dark); /* Define el color del texto o del icono. */
+}
+
+.product-grid { /* Define los estilos del selector .product-grid. */
+  display: grid; /* Selecciona el modelo de disposicion de los elementos internos. */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Define la cantidad y el tamano de las columnas de la cuadricula. */
+  gap: 1.5rem; /* Define el espacio entre los elementos del contenedor. */
+}
+
+.product-card { /* Define los estilos del selector .product-card. */
+  background: var(--surface); /* Define el fondo del elemento. */
+  border: 1px solid var(--border); /* Define el grosor, estilo y color del borde. */
+  border-radius: 12px; /* Redondea las esquinas del elemento. */
+  padding: 1.25rem; /* Define el espacio interior entre el contenido y el borde. */
+  box-shadow: var(--shadow); /* Anade una sombra para dar profundidad visual. */
+  display: flex; /* Selecciona el modelo de disposicion de los elementos internos. */
+  flex-direction: column; /* Define la direccion en que se ordenan los elementos flexibles. */
+  justify-content: space-between; /* Distribuye los elementos a lo largo del eje principal. */
+}
+
+.product-card.out-of-stock { /* Define los estilos del selector .product-card.out-of-stock. */
+  opacity: 0.6; /* Define el nivel de opacidad del elemento. */
+  background-color: #f1f5f9; /* Define el color de fondo del elemento. */
+}
+
+.product-title { /* Define los estilos del selector .product-title. */
+  font-size: 1.1rem; /* Define el tamano del texto. */
+  margin-bottom: 0.5rem; /* Establece el valor de margin-bottom para esta regla. */
+}
+
+.product-price { /* Define los estilos del selector .product-price. */
+  font-size: 1.25rem; /* Define el tamano del texto. */
+  font-weight: bold; /* Define el grosor del texto. */
+  color: var(--primary); /* Define el color del texto o del icono. */
+  margin-bottom: 0.5rem; /* Establece el valor de margin-bottom para esta regla. */
+}
+
+.product-stock { /* Define los estilos del selector .product-stock. */
+  font-size: 0.875rem; /* Define el tamano del texto. */
+  color: var(--text-muted); /* Define el color del texto o del icono. */
+  margin-bottom: 1rem; /* Establece el valor de margin-bottom para esta regla. */
+}
+
+.in-cart-tag { /* Define los estilos del selector .in-cart-tag. */
+  color: var(--primary); /* Define el color del texto o del icono. */
+  font-weight: 600; /* Define el grosor del texto. */
+}
+
+.product-controls { /* Define los estilos del selector .product-controls. */
+  display: flex; /* Selecciona el modelo de disposicion de los elementos internos. */
+  gap: 0.75rem; /* Define el espacio entre los elementos del contenedor. */
+  align-items: center; /* Alinea los elementos en el eje transversal. */
+}
+
+.quantity-field { /* Define los estilos del selector .quantity-field. */
+  display: flex; /* Selecciona el modelo de disposicion de los elementos internos. */
+  flex-direction: column; /* Define la direccion en que se ordenan los elementos flexibles. */
+  gap: 0.25rem; /* Define el espacio entre los elementos del contenedor. */
+  font-size: 0.75rem; /* Define el tamano del texto. */
+}
+
+.quantity-field input { /* Define los estilos del selector .quantity-field input. */
+  width: 60px; /* Define el ancho del elemento. */
+  padding: 0.4rem; /* Define el espacio interior entre el contenido y el borde. */
+  border: 1px solid var(--border); /* Define el grosor, estilo y color del borde. */
+  border-radius: 6px; /* Redondea las esquinas del elemento. */
+  text-align: center; /* Alinea el texto horizontalmente. */
+  font-size: 0.9rem; /* Define el tamano del texto. */
+}
+
+/* Botones */
+.btn { /* Define los estilos del selector .btn. */
+  padding: 0.5rem 1rem; /* Define el espacio interior entre el contenido y el borde. */
+  border-radius: 6px; /* Redondea las esquinas del elemento. */
+  border: none; /* Define el grosor, estilo y color del borde. */
+  font-weight: 600; /* Define el grosor del texto. */
+  cursor: pointer; /* Define la apariencia del puntero sobre el elemento. */
+  display: flex; /* Selecciona el modelo de disposicion de los elementos internos. */
+  align-items: center; /* Alinea los elementos en el eje transversal. */
+  justify-content: center; /* Distribuye los elementos a lo largo del eje principal. */
+  gap: 0.5rem; /* Define el espacio entre los elementos del contenedor. */
+  transition: background 0.2s; /* Suaviza los cambios entre estados visuales. */
+}
+
+.btn-primary { /* Define los estilos del selector .btn-primary. */
+  background-color: var(--primary); /* Define el color de fondo del elemento. */
+  color: white; /* Define el color del texto o del icono. */
+}
+
+.btn-primary:hover:not(:disabled) { /* Define los estilos del selector .btn-primary:hover:not(:disabled). */
+  background-color: var(--primary-hover); /* Define el color de fondo del elemento. */
+}
+
+.btn-primary:disabled { /* Define los estilos del selector .btn-primary:disabled. */
+  background-color: var(--text-muted); /* Define el color de fondo del elemento. */
+  cursor: not-allowed; /* Define la apariencia del puntero sobre el elemento. */
+}
+
+.btn-danger { /* Define los estilos del selector .btn-danger. */
+  background-color: var(--danger); /* Define el color de fondo del elemento. */
+  color: white; /* Define el color del texto o del icono. */
+}
+
+.btn-secondary { /* Define los estilos del selector .btn-secondary. */
+  background-color: #e2e8f0; /* Define el color de fondo del elemento. */
+  color: var(--text-dark); /* Define el color del texto o del icono. */
+}
+
+/* Drawer Carrito */
+.drawer-overlay { /* Define los estilos del selector .drawer-overlay. */
+  position: fixed; /* Determina como se posiciona el elemento en la pagina. */
+  inset: 0; /* Fija simultaneamente las distancias respecto a los cuatro bordes. */
+  background-color: rgba(0, 0, 0, 0.5); /* Define el color de fondo del elemento. */
+  z-index: 200; /* Controla el orden de superposicion respecto a otros elementos. */
+  display: flex; /* Selecciona el modelo de disposicion de los elementos internos. */
+  justify-content: flex-end; /* Distribuye los elementos a lo largo del eje principal. */
+}
+
+.drawer-panel { /* Define los estilos del selector .drawer-panel. */
+  width: 100%; /* Define el ancho del elemento. */
+  max-width: 420px; /* Limita el ancho maximo del elemento. */
+  background: var(--surface); /* Define el fondo del elemento. */
+  height: 100%; /* Define la altura del elemento. */
+  display: flex; /* Selecciona el modelo de disposicion de los elementos internos. */
+  flex-direction: column; /* Define la direccion en que se ordenan los elementos flexibles. */
+  box-shadow: -4px 0 15px rgba(0, 0, 0, 0.1); /* Anade una sombra para dar profundidad visual. */
+}
+
+.drawer-header { /* Define los estilos del selector .drawer-header. */
+  padding: 1.25rem; /* Define el espacio interior entre el contenido y el borde. */
+  border-bottom: 1px solid var(--border); /* Define el borde inferior del elemento. */
+  display: flex; /* Selecciona el modelo de disposicion de los elementos internos. */
+  justify-content: space-between; /* Distribuye los elementos a lo largo del eje principal. */
+  align-items: center; /* Alinea los elementos en el eje transversal. */
+}
+
+.drawer-title { /* Define los estilos del selector .drawer-title. */
+  display: flex; /* Selecciona el modelo de disposicion de los elementos internos. */
+  align-items: center; /* Alinea los elementos en el eje transversal. */
+  gap: 0.5rem; /* Define el espacio entre los elementos del contenedor. */
+}
+
+.drawer-body { /* Define los estilos del selector .drawer-body. */
+  flex: 1; /* Define como crece o se encoge el elemento dentro del contenedor flexible. */
+  overflow-y: auto; /* Controla el contenido que excede verticalmente el elemento. */
+  padding: 1rem; /* Define el espacio interior entre el contenido y el borde. */
+}
+
+.empty-cart { /* Define los estilos del selector .empty-cart. */
+  text-align: center; /* Alinea el texto horizontalmente. */
+  color: var(--text-muted); /* Define el color del texto o del icono. */
+  padding: 3rem 1rem; /* Define el espacio interior entre el contenido y el borde. */
+}
+
+.empty-icon { /* Define los estilos del selector .empty-icon. */
+  margin-bottom: 1rem; /* Establece el valor de margin-bottom para esta regla. */
+  opacity: 0.4; /* Define el nivel de opacidad del elemento. */
+}
+
+.cart-item-row { /* Define los estilos del selector .cart-item-row. */
+  display: flex; /* Selecciona el modelo de disposicion de los elementos internos. */
+  flex-direction: column; /* Define la direccion en que se ordenan los elementos flexibles. */
+  gap: 0.5rem; /* Define el espacio entre los elementos del contenedor. */
+  padding: 0.75rem 0; /* Define el espacio interior entre el contenido y el borde. */
+  border-bottom: 1px solid var(--border); /* Define el borde inferior del elemento. */
+}
+
+.cart-item-info { /* Define los estilos del selector .cart-item-info. */
+  display: flex; /* Selecciona el modelo de disposicion de los elementos internos. */
+  justify-content: space-between; /* Distribuye los elementos a lo largo del eje principal. */
+}
+
+.cart-item-controls { /* Define los estilos del selector .cart-item-controls. */
+  display: flex; /* Selecciona el modelo de disposicion de los elementos internos. */
+  justify-content: space-between; /* Distribuye los elementos a lo largo del eje principal. */
+  align-items: center; /* Alinea los elementos en el eje transversal. */
+}
+
+.quantity-stepper { /* Define los estilos del selector .quantity-stepper. */
+  display: flex; /* Selecciona el modelo de disposicion de los elementos internos. */
+  align-items: center; /* Alinea los elementos en el eje transversal. */
+  border: 1px solid var(--border); /* Define el grosor, estilo y color del borde. */
+  border-radius: 6px; /* Redondea las esquinas del elemento. */
+  overflow: hidden; /* Controla el contenido que excede los limites del elemento. */
+}
+
+.stepper-btn { /* Define los estilos del selector .stepper-btn. */
+  background: #f8fafc; /* Define el fondo del elemento. */
+  border: none; /* Define el grosor, estilo y color del borde. */
+  padding: 0.35rem 0.6rem; /* Define el espacio interior entre el contenido y el borde. */
+  cursor: pointer; /* Define la apariencia del puntero sobre el elemento. */
+}
+
+.stepper-btn:hover { /* Define los estilos del selector .stepper-btn:hover. */
+  background: #e2e8f0; /* Define el fondo del elemento. */
+}
+
+.stepper-input { /* Define los estilos del selector .stepper-input. */
+  width: 45px; /* Define el ancho del elemento. */
+  border: none; /* Define el grosor, estilo y color del borde. */
+  text-align: center; /* Alinea el texto horizontalmente. */
+  font-weight: 600; /* Define el grosor del texto. */
+}
+
+.drawer-footer { /* Define los estilos del selector .drawer-footer. */
+  padding: 1.25rem; /* Define el espacio interior entre el contenido y el borde. */
+  border-top: 1px solid var(--border); /* Define el borde superior del elemento. */
+  background: #f8fafc; /* Define el fondo del elemento. */
+}
+
+.summary-row { /* Define los estilos del selector .summary-row. */
+  display: flex; /* Selecciona el modelo de disposicion de los elementos internos. */
+  justify-content: space-between; /* Distribuye los elementos a lo largo del eje principal. */
+  margin-bottom: 0.5rem; /* Establece el valor de margin-bottom para esta regla. */
+  font-size: 0.95rem; /* Define el tamano del texto. */
+}
+
+.total-row { /* Define los estilos del selector .total-row. */
+  font-size: 1.15rem; /* Define el tamano del texto. */
+  margin-top: 0.5rem; /* Establece el valor de margin-top para esta regla. */
+  padding-top: 0.5rem; /* Establece el valor de padding-top para esta regla. */
+  border-top: 1px dashed var(--border); /* Define el borde superior del elemento. */
+}
+
+.total-price { /* Define los estilos del selector .total-price. */
+  color: var(--primary); /* Define el color del texto o del icono. */
+}
+
+.btn-checkout { /* Define los estilos del selector .btn-checkout. */
+  width: 100%; /* Define el ancho del elemento. */
+  margin-top: 1rem; /* Establece el valor de margin-top para esta regla. */
+  padding: 0.75rem; /* Define el espacio interior entre el contenido y el borde. */
+  font-size: 1rem; /* Define el tamano del texto. */
+}
+
+/* Toast */
+.toast-container { /* Define los estilos del selector .toast-container. */
+  position: fixed; /* Determina como se posiciona el elemento en la pagina. */
+  bottom: 24px; /* Define la distancia desde el borde inferior de referencia. */
+  right: 24px; /* Define la distancia desde el borde derecho de referencia. */
+  background-color: #fef3c7; /* Define el color de fondo del elemento. */
+  border: 1px solid #f59e0b; /* Define el grosor, estilo y color del borde. */
+  color: #92400e; /* Define el color del texto o del icono. */
+  padding: 0.75rem 1rem; /* Define el espacio interior entre el contenido y el borde. */
+  border-radius: 8px; /* Redondea las esquinas del elemento. */
+  box-shadow: var(--shadow); /* Anade una sombra para dar profundidad visual. */
+  display: flex; /* Selecciona el modelo de disposicion de los elementos internos. */
+  align-items: center; /* Alinea los elementos en el eje transversal. */
+  justify-content: space-between; /* Distribuye los elementos a lo largo del eje principal. */
+  gap: 1rem; /* Define el espacio entre los elementos del contenedor. */
+  z-index: 300; /* Controla el orden de superposicion respecto a otros elementos. */
+  max-width: 380px; /* Limita el ancho maximo del elemento. */
+  animation: slideIn 0.3s ease-out; /* Aplica una animacion al elemento. */
+}
+
+.toast-content { /* Define los estilos del selector .toast-content. */
+  display: flex; /* Selecciona el modelo de disposicion de los elementos internos. */
+  align-items: center; /* Alinea los elementos en el eje transversal. */
+  gap: 0.5rem; /* Define el espacio entre los elementos del contenedor. */
+}
+
+.toast-close-btn { /* Define los estilos del selector .toast-close-btn. */
+  background: none; /* Define el fondo del elemento. */
+  border: none; /* Define el grosor, estilo y color del borde. */
+  color: inherit; /* Define el color del texto o del icono. */
+  cursor: pointer; /* Define la apariencia del puntero sobre el elemento. */
+}
+
+/* Modal */
+.modal-overlay { /* Define los estilos del selector .modal-overlay. */
+  position: fixed; /* Determina como se posiciona el elemento en la pagina. */
+  inset: 0; /* Fija simultaneamente las distancias respecto a los cuatro bordes. */
+  background: rgba(0, 0, 0, 0.5); /* Define el fondo del elemento. */
+  display: flex; /* Selecciona el modelo de disposicion de los elementos internos. */
+  align-items: center; /* Alinea los elementos en el eje transversal. */
+  justify-content: center; /* Distribuye los elementos a lo largo del eje principal. */
+  z-index: 350; /* Controla el orden de superposicion respecto a otros elementos. */
+  padding: 1rem; /* Define el espacio interior entre el contenido y el borde. */
+}
+
+.modal-card { /* Define los estilos del selector .modal-card. */
+  background: var(--surface); /* Define el fondo del elemento. */
+  border-radius: 12px; /* Redondea las esquinas del elemento. */
+  max-width: 440px; /* Limita el ancho maximo del elemento. */
+  width: 100%; /* Define el ancho del elemento. */
+  padding: 1.25rem; /* Define el espacio interior entre el contenido y el borde. */
+  box-shadow: var(--shadow); /* Anade una sombra para dar profundidad visual. */
+}
+
+.modal-header { /* Define los estilos del selector .modal-header. */
+  display: flex; /* Selecciona el modelo de disposicion de los elementos internos. */
+  align-items: center; /* Alinea los elementos en el eje transversal. */
+  gap: 0.5rem; /* Define el espacio entre los elementos del contenedor. */
+  margin-bottom: 1rem; /* Establece el valor de margin-bottom para esta regla. */
+}
+
+.modal-header h3 { /* Define los estilos del selector .modal-header h3. */
+  flex: 1; /* Define como crece o se encoge el elemento dentro del contenedor flexible. */
+  font-size: 1.1rem; /* Define el tamano del texto. */
+}
+
+.modal-actions { /* Define los estilos del selector .modal-actions. */
+  display: flex; /* Selecciona el modelo de disposicion de los elementos internos. */
+  justify-content: flex-end; /* Distribuye los elementos a lo largo del eje principal. */
+  gap: 0.75rem; /* Define el espacio entre los elementos del contenedor. */
+  margin-top: 1.5rem; /* Establece el valor de margin-top para esta regla. */
+}
+
+.icon-btn { /* Define los estilos del selector .icon-btn. */
+  background: none; /* Define el fondo del elemento. */
+  border: none; /* Define el grosor, estilo y color del borde. */
+  cursor: pointer; /* Define la apariencia del puntero sobre el elemento. */
+  color: var(--text-muted); /* Define el color del texto o del icono. */
+}
+
+.icon-btn:hover { /* Define los estilos del selector .icon-btn:hover. */
+  color: var(--text-dark); /* Define el color del texto o del icono. */
+}
+
+.text-danger { /* Define los estilos del selector .text-danger. */
+  color: var(--danger); /* Define el color del texto o del icono. */
+}
+
+.text-warning { /* Define los estilos del selector .text-warning. */
+  color: var(--warning); /* Define el color del texto o del icono. */
+}
+
+@keyframes slideIn { /* Define los estilos del selector @keyframes slideIn. */
+  from { /* Define los estilos del selector from. */
+    transform: translateY(100%); /* Aplica una transformacion visual al elemento. */
+    opacity: 0; /* Define el nivel de opacidad del elemento. */
+  }
+  to { /* Define los estilos del selector to. */
+    transform: translateY(0); /* Aplica una transformacion visual al elemento. */
+    opacity: 1; /* Define el nivel de opacidad del elemento. */
+  }
+}
